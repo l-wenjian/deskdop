@@ -4,42 +4,11 @@ import router from './router'
 import store from './store'
 import { axios } from '@/libs/axios'
 import { serveUrl } from '@/libs/config'
-import {
-  Input,
-  InputNumber,
-  Radio,
-  RadioGroup,
-  RadioButton,
-  Checkbox,
-  CheckboxButton,
-  CheckboxGroup,
-  Switch,
-  Select,
-  Option,
-  OptionGroup,
-  Button,
-  ButtonGroup,
-  Table,
-  TableColumn,
-  DatePicker,
-  TimeSelect,
-  TimePicker,
-  Pagination,
-  Form,
-  FormItem,
-  Row,
-  Col,
-  Upload,
-  Loading,
-  MessageBox,
-  Message,
-} from 'element-ui';
-
+import ElementUI from 'element-ui'
 import './styles/index.scss'
 
-Vue.prototype.$message = Message
-Vue.prototype.$loading = Loading.service;
-Vue.prototype.$msgbox = MessageBox;
+// import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI)
 
 Vue.prototype.$http = axios
 Vue.prototype.$serveUrl = serveUrl

@@ -104,7 +104,7 @@
                             </template>
                         </div>
                     </div>
-                    <div class="notify-list">
+                   <!--  <div class="notify-list">
                         <span class="notify-list-left">列表：</span>
                         <div class="notify-list-right">
                             <template>
@@ -114,7 +114,7 @@
                                 </el-radio-group>
                             </template>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </template>
@@ -129,6 +129,7 @@ import bg from "../assets/bg.jpg";
 import Dialog from '../components/dialog'
 import SetForm from '../components/set'
 import urlList from '../libs/urlList'
+import { setItem, getItem } from '../libs/config'
 
 const MARGIN = 10;
 let MAIN_HEIGHT = 74;
@@ -193,6 +194,11 @@ const setList = [
         icon: 'el-icon-view',
         label: '个性化'
     },
+    {
+        value: 'initList',
+        icon: 'el-icon-s-grid',
+        label: '初始化列表'
+    },
 ]
 let moveEvent = null
 
@@ -204,7 +210,7 @@ export default {
     },
     data() {
         return {
-            list: urlList,
+            list: getItem('current_list') || urlList,
             sort: "orderly",
             mouseDown: false,
             xList: [],
@@ -230,7 +236,6 @@ export default {
             curItemY: 0,
             currentIndex: null,
             showBaidu: 0,  // 显示百度
-            showList: 0,
             setMenu: {
                 top: 0,
                 left: 0
@@ -240,17 +245,22 @@ export default {
     },
     computed: {},
     mounted() {
+
         this.getWindowPosition()
-        this.sortAuto()
+        
         // this.$refs.bgRef.addEventListener("mouseup", this.handleUp);
         this.$refs.bgRef.onmouseup = this.handleUp
 
         window.addEventListener('resize', this.mainSize)
 
         this.init()
+
     },
     methods: {
         init() {
+            if (!getItem('current_list')) {
+                this.sortAuto()
+            }
             this.listenDrop()
         },
         // 监听拖动
@@ -302,8 +312,9 @@ export default {
 
                     let p = _this.getMinPosition()
                     _this.checkPosition(p, e)
-
                 }
+
+                setItem('current_list', this.list)  // 初始化的列表
             }
         },
         // 获取宫格
@@ -337,6 +348,8 @@ export default {
                     }
                 }
             }
+
+            setItem('init_list', this.list)  // 初始化的列表
         },
         mainSize(e) {
             this.getWindowPosition()
@@ -452,6 +465,9 @@ export default {
                 break;
                 case 'addFiles':
                     this.addFiles()
+                    break; 
+                case 'initList':
+                    this.initList()
                     break; 
             }
         },
@@ -586,6 +602,18 @@ export default {
                     })
                 }
             }
+        },
+        // 恢复默认列表
+        initList(){
+            this.$confirm('将恢复成初始列表状态', {
+              confirmButtonText: '确定',
+              cancelButtonText: '取消',
+              type: 'warning'
+            }).then(() => {
+              this.list = getItem('init_list')
+            }).catch((e) => {
+                console.log(e)
+            })
         },
         addFiles() {},
         changeShowList(e) {
