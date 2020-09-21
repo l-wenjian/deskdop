@@ -1,0 +1,59 @@
+
+// $them-dark: #6a3093;  // 默认主题颜色 深蓝 
+// $them-simple: #a044ff;  // 默认主题颜色 浅蓝 
+
+$them-dark: #6c5fd9;  // 默认主题颜色 深蓝 
+$them-simple: #aba2f9;  // 默认主题颜色 浅蓝 
+
+$them-dark-m: #6c5fd9;
+
+$bg-gray: #f6f6f6;  // 灰色背景颜色
+$font-gray: #afb3ba;  // 灰色字体颜色
+$bor-gray: #e3e3e3;  // 灰色边颜色
+
+// background: #6a3093;
+// background: -webkit-linear-gradient(to right, rgb(106, 48, 147), rgb(160, 68, 255));
+// background: linear-gradient(to right, rgb(106, 48, 147), rgb(160, 68, 255));
+
+@mixin bor-t-1px($color) {
+    position: relative;
+    &::before {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-top: 1px solid $color;
+        content: '';
+    }
+}
+
+@mixin bor-b-1px($color) {
+    position: relative;
+    &::after {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-top: 1px solid $color;
+        content: '';
+    }
+}
+
+@media(-webkit-min-device-pixel-ratio:2),
+(min-device-pixel-ratio:2) {
+  .border-t-1px {
+    &::before {
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+}
+
+@mixin defaultBgImage{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-color:#fff;
+}
