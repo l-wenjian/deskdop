@@ -1,6 +1,29 @@
 <template>
     <div class="deskdop-bg" :style="{backgroundSize: `${bgType}`,backgroundImage:`url(${imageBgUrl})`}" ref="deskdopRef">
         <div class="deskdop-main" ref="bgRef" @contextmenu.prevent="handleMainMenu($event)">
+            <section key="0-0-0-0">
+                <div class="deskdop-list" :style="{
+                        top: `${0}px`,
+                        left: `${400}px`,
+                        zoom: `${mainZoom}`
+                    }" 
+                >
+                    <span class="deskdop-list-icon" :style="{backgroundImage: `url(${icon1})`}" ></span>
+                    <span class="deskdop-list-txt" title="回收站">回收站</span>
+                </div>
+                    <div >
+                        <!-- <Dialog ref="dialogRef" 
+                            @handle-down="handleDown" 
+                            :is-files="true" 
+                            :title="回收站" 
+                            :_index="999" 
+                            :main-zoom="mainZoom" 
+                            :datas="item"
+                            @close-dialog="closeDialog(item)" 
+                            @handle-menu="handleMenu" /> -->
+                    </div>
+            </section>
+
             <section v-for="(item, index) in list" :key="index">
                 <div class="deskdop-list" :style="{
                         top: `${item.y}px`,
@@ -22,10 +45,17 @@
                 </div>
                 <template v-if="item.files">
                     <div v-if="item.show">
-                        <Dialog ref="dialogRef" @handle-down="handleDown" :is-files="true" :title="item.title" :_index="index" :main-zoom="mainZoom" :datas="item" @close-dialog="closeDialog(item)" @handle-menu="handleMenu" />
+                        <Dialog ref="dialogRef" 
+                            @handle-down="handleDown" 
+                            :is-files="true" 
+                            :title="item.title" 
+                            :_index="index" 
+                            :main-zoom="mainZoom" 
+                            :datas="item"
+                            @close-dialog="closeDialog(item)" 
+                            @handle-menu="handleMenu" />
                     </div>
                 </template>
-
             </section>
         </div>
         <!-- 设置按钮 -->
@@ -129,7 +159,7 @@ import bg from "../assets/bg.jpg";
 import Dialog from '../components/dialog'
 import SetForm from '../components/set'
 import urlList from '../libs/urlList'
-import { setItem, getItem } from '../libs/config'
+import { setItem, getItem, guid } from '../libs/config'
 
 const MARGIN = 10;
 let MAIN_HEIGHT = 74;
@@ -211,6 +241,7 @@ export default {
     data() {
         return {
             list: getItem('current_list') || urlList,
+            icon1: icon1,
             sort: "orderly",
             mouseDown: false,
             xList: [],
@@ -455,21 +486,31 @@ export default {
                     this.sortAuto()
                 break;
                 case 'edit':
-                    this.edit()
+                    this.edit(()=>{
+                        setItem('current_list', this.list)
+                    })
                 break;
                 case 'del':
-                    this.del()
+                    this.del(()=>{
+                        setItem('current_list', this.list)
+                    })
                 break;
                 case 'add':
-                    this.add()
+                    this.add(()=>{
+                        setItem('current_list', this.list)
+                    })
                 break;
                 case 'addFiles':
-                    this.addFiles()
+                    this.addFiles(()=>{
+                        setItem('current_list', this.list)
+                    })
                     break; 
                 case 'initList':
                     this.initList()
                     break; 
             }
+            
+            setItem('current_list', this.list)
         },
         getMinPosition() {
             let minX = this.xList[0],
@@ -491,6 +532,7 @@ export default {
         },
         closeDialog(item) {
             item.show = 0
+            setItem('current_list', this.list)
         },
         // 图片
         handleChange(file) {
@@ -539,7 +581,7 @@ export default {
             }
         },
         // 增，
-        add() {
+        add(cb) {
             const h = this.$createElement;
             this.$msgbox({
                 title: '新增网址',
@@ -552,23 +594,60 @@ export default {
                     if(action === 'confirm') {
                         let ele = vm.$children[2]
                         let obj = {
-                            url: ele.website,
+                            url: ele.website.indexOf('http') === -1 ? `http://${ele.website}` : ele.website,
                             title: ele.websiteName,
+                            id: guid(),
                             icon: ele.imageBgUrl || `http://www.google.cn/s2/favicons?domain=${ele.website}`,
                             x: this.xList[this.xList.length-1],
                             y: this.yList[0]
                         }
+                        if(this.curItem&&this.curItem.files) {
+                            this.curItem.children.push(obj)
+                        } else {
+                            this.list.push(obj)
+                        }
+                        cb()
+                    }
+                }
+            })
+        },
+        // 增文件夹
+        addFiles(cb) {
+            const h = this.$createElement;
+            this.$msgbox({
+                title: '新增文件夹',
+                message: h(SetForm, { props: {
+                    fromFile: false
+                }}, null),
+                showCancelButton: true,
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                modal:false,
+                callback: (action, vm) => {
+                    if(action === 'confirm') {
+                        let ele = vm.$children[2]
+                        let obj = {
+                            title: ele.websiteName,
+                            children: [],
+                            id: guid(),
+                            files: 1,
+                            show: 0,
+                            x: this.xList[this.xList.length-1],
+                            y: this.yList[0]
+                        }
                         this.list.push(obj)
+                        cb()
                     }
                 }
             })
         },
         //修改
-        edit(){
+        edit(cb){
             const h = this.$createElement;
             this.$msgbox({
                 title: '修改网址',
                 message: h(SetForm, { props: {
+                    fromFile: this.curItem.files ? false : true,
                     datas: this.curItem,
                     status: 'edit'
                 }}, null),
@@ -581,13 +660,14 @@ export default {
                         let ele = vm.$children[2]
                         this.curItem.title = ele.websiteName
                         this.curItem.icon = ele.imageBgUrl
-                        this.curItem.url = ele.website
+                        this.curItem.url = ele.website.indexOf('http') === -1 ? `http://${ele.website}` : ele.website
+                        cb()
                     }
                 }
             })
         },
         //删，
-        del(){
+        del(cb){
             for(let i = 0, l = this.list.length; i < l; i++) {
                 let h = this.list[i]
                 if (h.id === this.curItem.id) {
@@ -602,6 +682,7 @@ export default {
                     })
                 }
             }
+            cb()
         },
         // 恢复默认列表
         initList(){
@@ -611,11 +692,11 @@ export default {
               type: 'warning'
             }).then(() => {
               this.list = getItem('init_list')
+              setItem('current_list', this.list)
             }).catch((e) => {
                 console.log(e)
             })
         },
-        addFiles() {},
         changeShowList(e) {
             console.log(e)
         }

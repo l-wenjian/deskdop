@@ -94,7 +94,6 @@ export default {
     computed:{
     },
     mounted() {
-        console.log('dd')
         this.$store.commit('setZIndex')
         this.zIndex = this.$store.state.zIndex.zIndex
         // window.addEventListener("mouseup", this.onmouseup);
@@ -103,9 +102,6 @@ export default {
             this.marginTop = 40
             this.curY = 60
         }
-    },
-    activated() {
-        console.log('jj')
     },
     methods: {
         onmousedonw(e) {

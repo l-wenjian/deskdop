@@ -7,6 +7,30 @@ let urlList = [{
     "x": 0,
     "y": 91
 }, {
+    "url": "http://map.baidu.com/",
+    "title": "百度地图",
+    "icon": "http://www.google.cn/s2/favicons?domain=http://map.baidu.com/",
+    "x": 0,
+    "y": 91
+},{
+    "url": "https://union-click.jd.com/",
+    "title": "京东",
+    "icon": "http://www.google.cn/s2/favicons?domain=https://union-click.jd.com/",
+    "x": 70,
+    "y": 91
+},{
+    "url": "https://www.taobao.com/",
+    "title": "淘宝网",
+    "icon": "http://www.google.cn/s2/favicons?domain=https://www.taobao.com/",
+    "x": 70,
+    "y": 182
+},{
+    "url": "http://www.iqiyi.com/",
+    "title": "爱奇艺",
+    "icon": "http://www.google.cn/s2/favicons?domain=http://www.iqiyi.com/",
+    "x": 70,
+    "y": 182
+}, {
     "url": "https://translate.google.cn",
     "title": "谷歌翻译",
     "icon": "http://www.google.cn/s2/favicons?domain=https://translate.google.cn",
@@ -19,120 +43,6 @@ let urlList = [{
     "icon": "http://www.google.cn/s2/favicons?domain=https://weibo.com/",
     "x": 0,
     "y": 91
-}, {
-    "url": "http://map.baidu.com/",
-    "title": "百度地图",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://map.baidu.com/",
-    "x": 0,
-    "y": 91
-},{
-    "url": "https://union-click.jd.com/",
-    "title": "京东",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://union-click.jd.com/",
-    "x": 70,
-    "y": 91
-}, {
-    "url": "http://www.iqiyi.com/",
-    "title": "爱奇艺",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://www.iqiyi.com/",
-    "x": 70,
-    "y": 182
-}, {
-    "url": "https://www.taobao.com/",
-    "title": "淘宝网",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://www.taobao.com/",
-    "x": 70,
-    "y": 182
-},{
-    "url": "https://www.ximalaya.com/",
-    "title": "喜马拉雅FM",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://www.ximalaya.com/",
-    "x": 140,
-    "y": 182
-}, {
-    "url": "http://www.cnki.net/",
-    "title": "知网",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://www.cnki.net/",
-    "x": 140,
-    "y": 273
-}, {
-    "url": "http://www.zhihu.com/",
-    "title": "知乎",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://www.zhihu.com/",
-    "x": 140,
-    "y": 273
-}, {
-    "url": "http://jump.luna.58.com/",
-    "title": "58同城",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://jump.luna.58.com/",
-    "x": 140,
-    "y": 273
-}, {
-    "url": "https://p.yiqifa.org/5WB6Sl",
-    "title": "唯品会",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://p.yiqifa.org/5WB6Sl",
-    "x": 140,
-    "y": 273
-}, {
-    "url": "https://qiang.suning.com",
-    "title": "苏宁秒杀",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://qiang.suning.com",
-    "x": 140,
-    "y": 273
-}, {
-    "url": "http://v.6.cn/",
-    "title": "六间房直播",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://v.6.cn/",
-    "x": 140,
-    "y": 273
-}, {
-    "url": "http://xueshu.baidu.com/",
-    "title": "百度学术",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://xueshu.baidu.com/",
-    "x": 210,
-    "y": 364
-}, {
-    "url": "https://www.chsi.com.cn/",
-    "title": "学信网",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://www.chsi.com.cn/",
-    "x": 210,
-    "y": 364
-}, {
-    "url": "https://www.hupu.com/",
-    "title": "虎扑社区",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://www.hupu.com/",
-    "x": 210,
-    "y": 364
-}, {
-    "url": "https://www.icourse163.org/",
-    "title": "中国大学MOOC",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://www.icourse163.org/",
-    "x": 210,
-    "y": 364
-}, {
-    "url": "https://music.163.com/",
-    "title": "网易云音乐",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://music.163.com/",
-    "x": 210,
-    "y": 364
-}, {
-    "url": "http://www.12306.cn/",
-    "title": "12306",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://www.12306.cn/",
-    "x": 210,
-    "y": 364
-}, {
-    "url": "https://www.qcc.com/",
-    "title": "企查查",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://www.qcc.com/",
-    "x": 210,
-    "y": 364
-}, {
-    "url": "http://www.cpta.com.cn/",
-    "title": "人事考试网",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://www.cpta.com.cn/",
-    "x": 280,
-    "y": 455
 }, {
     "title": "视频",
     "files": 1,
@@ -295,10 +205,58 @@ let urlList = [{
         "title": "征信中心",
         "icon": "http://www.google.cn/s2/favicons?domain=http://www.pbccrc.org.cn/"
     }, {
+        "url": "http://www.cpta.com.cn/",
+        "title": "人事考试网",
+        "icon": "http://www.google.cn/s2/favicons?domain=http://www.cpta.com.cn/",
+        "x": 280,
+        "y": 455
+    },{
         "url": "http://e.baidu.com/",
         "title": "百度营销",
         "icon": "http://www.google.cn/s2/favicons?domain=http://e.baidu.com/"
-    }]
+    },{
+        "url": "https://www.chsi.com.cn/",
+        "title": "学信网",
+        "icon": "http://www.google.cn/s2/favicons?domain=https://www.chsi.com.cn/",
+        "x": 210,
+        "y": 364
+    },{
+        "url": "https://www.icourse163.org/",
+        "title": "中国大学MOOC",
+        "icon": "http://www.google.cn/s2/favicons?domain=https://www.icourse163.org/",
+        "x": 210,
+        "y": 364
+    }, {
+        "url": "http://www.12306.cn/",
+        "title": "12306",
+        "icon": "http://www.google.cn/s2/favicons?domain=http://www.12306.cn/",
+        "x": 210,
+        "y": 364
+    }, {
+        "url": "https://www.qcc.com/",
+        "title": "企查查",
+        "icon": "http://www.google.cn/s2/favicons?domain=https://www.qcc.com/",
+        "x": 210,
+        "y": 364
+    },{
+        "url": "http://www.cnki.net/",
+        "title": "知网",
+        "icon": "http://www.google.cn/s2/favicons?domain=http://www.cnki.net/",
+        "x": 140,
+        "y": 273
+    }, {
+        "url": "http://www.zhihu.com/",
+        "title": "知乎",
+        "icon": "http://www.google.cn/s2/favicons?domain=http://www.zhihu.com/",
+        "x": 140,
+        "y": 273
+    }, {
+        "url": "http://xueshu.baidu.com/",
+        "title": "百度学术",
+        "icon": "http://www.google.cn/s2/favicons?domain=http://xueshu.baidu.com/",
+        "x": 210,
+        "y": 364
+    },]
 }, {
     "title": "购物",
     "files": 1,
@@ -330,6 +288,18 @@ let urlList = [{
         "title": "天猫超市",
         "icon": "http://www.google.cn/s2/favicons?domain=https://s.click.taobao.com/"
     }, {
+        "url": "https://p.yiqifa.org/5WB6Sl",
+        "title": "唯品会",
+        "icon": "http://www.google.cn/s2/favicons?domain=https://p.yiqifa.org/5WB6Sl",
+        "x": 140,
+        "y": 273
+    }, {
+        "url": "https://qiang.suning.com",
+        "title": "苏宁秒杀",
+        "icon": "http://www.google.cn/s2/favicons?domain=https://qiang.suning.com",
+        "x": 140,
+        "y": 273
+    },{
         "url": "http://www.dangdang.com/",
         "title": "当当网",
         "icon": "http://www.google.cn/s2/favicons?domain=http://www.dangdang.com/"
@@ -564,7 +534,13 @@ let urlList = [{
         "icon": "http://www.google.cn/s2/favicons?domain=https://www.acfun.cn/",
         "x": 210,
         "y": 273
-    }, 
+    }, {
+        "url": "http://v.6.cn/",
+        "title": "六间房直播",
+        "icon": "http://www.google.cn/s2/favicons?domain=http://v.6.cn/",
+        "x": 140,
+        "y": 273
+    },
     ]
 }, {
     "title": "生活",
@@ -573,9 +549,21 @@ let urlList = [{
     "y": 546,
     "show": 0,
     "children": [{
+        "url": "http://jump.luna.58.com/",
+        "title": "58同城",
+        "icon": "http://www.google.cn/s2/favicons?domain=http://jump.luna.58.com/",
+        "x": 140,
+        "y": 273
+    },{
         "url": "http://www.ganji.com/",
         "title": "赶集网",
         "icon": "http://www.google.cn/s2/favicons?domain=http://www.ganji.com/"
+    },{
+        "url": "https://www.hupu.com/",
+        "title": "虎扑社区",
+        "icon": "http://www.google.cn/s2/favicons?domain=https://www.hupu.com/",
+        "x": 210,
+        "y": 364
     }, {
         "url": "https://www.anjuke.com/",
         "title": "安居客",
@@ -612,7 +600,7 @@ let urlList = [{
         "url": "https://www.damai.cn/",
         "title": "大麦网",
         "icon": "http://www.google.cn/s2/favicons?domain=https://www.damai.cn/"
-    }]
+    },]
 }, {
     "title": "旅游",
     "files": 1,
@@ -788,7 +776,13 @@ let urlList = [{
         "url": "http://changba.com/",
         "title": "唱吧",
         "icon": "http://www.google.cn/s2/favicons?domain=http://changba.com/"
-    }]
+    },{
+        "url": "https://www.ximalaya.com/",
+        "title": "喜马拉雅FM",
+        "icon": "http://www.google.cn/s2/favicons?domain=https://www.ximalaya.com/",
+        "x": 140,
+        "y": 182
+    },]
 }, {
     "title": "财经",
     "files": 1,
