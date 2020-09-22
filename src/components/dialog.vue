@@ -156,7 +156,8 @@ export default {
         box-shadow: 0 0 5px #5d5d5d;
         &.has-baidu{
             margin-left: -200px;
-            margin-top: -40px
+            margin-top: -40px;
+            background: rgba(0, 0, 0, 0.2);
         }
         .dialog-header{
             display: flex;
@@ -233,7 +234,6 @@ export default {
         .baidu-con{
             width: 400px;
             padding:0 28px 28px;
-            background: #fff;
         .baidu-wrap{
             width: 100%;
             display: flex;

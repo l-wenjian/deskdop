@@ -26,6 +26,10 @@ let urlList = [{
     "x": 0,
     "y": 91
 },{
+    "url": "https://pan.baidu.com",
+    "title": "百度网盘",
+    "icon": "https://pan.baidu.com/static/images/favicon.ico"
+},{
     "url": "https://union-click.jd.com/",
     "title": "京东",
     "icon": "http://www.google.cn/s2/favicons?domain=https://union-click.jd.com/",
@@ -975,10 +979,6 @@ let urlList = [{
         "url": "https://mail.sohu.com/",
         "title": "搜狐邮箱",
         "icon": "http://www.google.cn/s2/favicons?domain=https://mail.sohu.com/"
-    }, {
-        "url": "https://pan.baidu.com",
-        "title": "百度网盘",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://pan.baidu.com"
     }, {
         "url": "https://www.aliyun.com/",
         "title": "阿里云",
