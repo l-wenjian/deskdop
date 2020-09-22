@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <script type="text/javascript">
-      (function(j,e,f){var d=100;var c;var a=j.documentElement,h=function(){var l=a.getBoundingClientRect().width;if(l>750){l=750}a.style.fontSize=d*(l/f)+"px"};e.addEventListener("resize",function(){clearTimeout(c);c=setTimeout(h,300)},false);e.addEventListener("pageshow",function(l){if(l.persisted){clearTimeout(c);c=setTimeout(h,300)}},false);if(j.readyState==="complete"){j.body.style.fontSize=14+"px"}else{j.addEventListener("DOMContentLoaded",function(l){j.body.style.fontSize=14+"px"},false)}var k=1;var g=e.navigator.appVersion.match(/android/gi);var b=e.navigator.appVersion.match(/iphone/gi);var i=e.devicePixelRatio;if(b){if(i>=3){k=3}else{if(i>=2){k=2}}}a.setAttribute("data-dpr",k);h()})(document,window,750);
-  </script>
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>

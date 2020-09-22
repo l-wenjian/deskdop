@@ -1,29 +1,6 @@
 <template>
     <div class="deskdop-bg" :style="{backgroundSize: `${bgType}`,backgroundImage:`url(${imageBgUrl})`}" ref="deskdopRef">
         <div class="deskdop-main" ref="bgRef" @contextmenu.prevent="handleMainMenu($event)">
-            <section key="0-0-0-0">
-                <div class="deskdop-list" :style="{
-                        top: `${0}px`,
-                        left: `${400}px`,
-                        zoom: `${mainZoom}`
-                    }" 
-                >
-                    <span class="deskdop-list-icon" :style="{backgroundImage: `url(${icon1})`}" ></span>
-                    <span class="deskdop-list-txt" title="回收站">回收站</span>
-                </div>
-                    <div >
-                        <!-- <Dialog ref="dialogRef" 
-                            @handle-down="handleDown" 
-                            :is-files="true" 
-                            :title="回收站" 
-                            :_index="999" 
-                            :main-zoom="mainZoom" 
-                            :datas="item"
-                            @close-dialog="closeDialog(item)" 
-                            @handle-menu="handleMenu" /> -->
-                    </div>
-            </section>
-
             <section v-for="(item, index) in list" :key="index">
                 <div class="deskdop-list" :style="{
                         top: `${item.y}px`,
@@ -36,7 +13,8 @@
                     draggable="true"
                 >
                     <div>
-                        <div v-if="item.files" class="deskdop-list-icon deskdop-files-bg">
+                        <span v-if="item.title == '回收站'" class="deskdop-list-icon" :style="{backgroundImage: `url(${recyclePng})`}" ></span>
+                        <div v-else-if="item.files" class="deskdop-list-icon deskdop-files-bg">
                             <span class="files-icon-list" v-for="(child, childIndex) in item.children" v-if="childIndex < 9" :style="{backgroundImage: `url(${child.icon})`}"></span>
                         </div>
                         <span v-else class="deskdop-list-icon" :style="{backgroundImage: `url(${item.icon})`}" ></span>
@@ -108,7 +86,7 @@
                     <div class="notify-list">
                         <span class="notify-list-left">背景调整：</span>
                         <div class="notify-list-right">
-                            <el-select v-model="bgType" placeholder="请选择">
+                            <el-select v-model="bgType" placeholder="请选择" @change="chagneBgType">
                                 <el-option v-for="item in bgTypeList" :key="item.value" :label="item.label" :value="item.value">
                                 </el-option>
                             </el-select>
@@ -117,7 +95,7 @@
                     <div class="notify-list">
                         <span class="notify-list-left">图标大小：</span>
                         <div class="notify-list-right">
-                            <el-select v-model="mainZoom" placeholder="请选择">
+                            <el-select v-model="mainZoom" placeholder="请选择" @change="changeIconSize">
                                 <el-option v-for="item in iconSizeList" :key="item.value" :label="item.label" :value="item.value">
                                 </el-option>
                             </el-select>
@@ -127,9 +105,9 @@
                         <span class="notify-list-left">显示百度搜索：</span>
                         <div class="notify-list-right">
                             <template>
-                                <el-radio-group v-model="showBaidu">
-                                    <el-radio :label="1">是</el-radio>
-                                    <el-radio :label="0">否</el-radio>
+                                <el-radio-group v-model="showBaidu" @change="changeShowBaidu">
+                                    <el-radio :label="'1'">是</el-radio>
+                                    <el-radio :label="'0'">否</el-radio>
                                 </el-radio-group>
                             </template>
                         </div>
@@ -151,10 +129,17 @@
         <template v-if="showBaidu">
             <Dialog :is-baidu="true" :main-zoom="mainZoom" :show-close="false" />
         </template>
+
+        <!-- 布局格子 -->
+        <!-- <div class="gird-wrap">
+            <div class="top-line" v-for="(h, i) in xList" :key="i" :style="{left: `${h}px`}">
+                <div class="left-line" v-for="(hh, ii) in yList" :key="`${i}-${ii}`" :style="{top: `${hh}px`}"></div>
+            </div>
+        </div> -->
     </div>
 </template>
 <script>
-import icon1 from "../assets/kuaishou.png";
+import recyclePng from "../assets/recycle.png";
 import bg from "../assets/bg.jpg";
 import Dialog from '../components/dialog'
 import SetForm from '../components/set'
@@ -220,14 +205,14 @@ const setList = [
         label: '恢复默认排序'
     },
     {
-        value: 'personalise',
-        icon: 'el-icon-view',
-        label: '个性化'
-    },
-    {
         value: 'initList',
         icon: 'el-icon-s-grid',
         label: '初始化列表'
+    },
+    {
+        value: 'personalise',
+        icon: 'el-icon-view',
+        label: '个性化'
     },
 ]
 let moveEvent = null
@@ -241,21 +226,21 @@ export default {
     data() {
         return {
             list: getItem('current_list') || urlList,
-            icon1: icon1,
+            recyclePng: recyclePng,
             sort: "orderly",
             mouseDown: false,
             xList: [],
             yList: [],
             mousePositon: null,
             bgTypeList: bgTypeList,
-            bgType: 'cover',
+            bgType: getItem('deskdop-bg-mode') || 'cover',
             iconSizeList: iconSizeList,
             menuList: menuList,
             setList: setList,
             showSetList: false,
-            imageBgUrl: bg,
+            imageBgUrl: getItem('deskdop-bg') || bg,
             showSet: false,
-            mainZoom: '1',
+            mainZoom: getItem('icon-size') || '1',
             menuTop: 0,
             menuLeft: 0,
             showMenu: false,
@@ -266,7 +251,7 @@ export default {
             curItemX: 0,
             curItemY: 0,
             currentIndex: null,
-            showBaidu: 0,  // 显示百度
+            showBaidu: getItem('show-baidu') || '0',  // 显示百度
             setMenu: {
                 top: 0,
                 left: 0
@@ -338,8 +323,9 @@ export default {
                     }
                     // 桌面-桌面
                     let r = _this.curDom.getBoundingClientRect()
-                    _this.curItem.x = e.clientX - (r.right - r.left)/2 + window.scrollX
-                    _this.curItem.y = e.clientY - (r.bottom - r.top)/2 + window.scrollY
+
+                    _this.curItem.x = e.clientX*(1/this.mainZoom) - (r.right - r.left)/2 + window.scrollX
+                    _this.curItem.y = e.clientY*(1/this.mainZoom) - (r.bottom - r.top)/2 + window.scrollY
 
                     let p = _this.getMinPosition()
                     _this.checkPosition(p, e)
@@ -352,8 +338,8 @@ export default {
         getWindowPosition() {
             this.yList = []
             this.xList = []
-            let row = Math.floor(this.$refs.bgRef.clientWidth / MAIN_WIDTH);
-            let col = Math.floor(this.$refs.bgRef.clientHeight / (MAIN_HEIGHT + MARGIN - 2));
+            let row = Math.floor(this.$refs.bgRef.clientWidth*(1/this.mainZoom) / MAIN_WIDTH);
+            let col = Math.floor(this.$refs.bgRef.clientHeight*(1/this.mainZoom) / ((MAIN_HEIGHT + MARGIN - 2)));
             for (let i = 0; i < col; i++) {
                 this.yList.push(i * MARGIN + i * MAIN_HEIGHT);
             }
@@ -462,6 +448,7 @@ export default {
         },
         handleMenu(e, item) {
             e.stopPropagation()
+            if (item.title == '回收站') return
             this.showMenu = true
             this.curItem = item
             this.menuTop = e.clientY
@@ -538,6 +525,7 @@ export default {
         handleChange(file) {
             this.getBase64(file.raw,(res)=>{
                 this.imageBgUrl = res
+                setItem('deskdop-bg', res)
             })
         },
         getBase64(img, callback) {
@@ -571,7 +559,9 @@ export default {
         dropFile(depositItem) {
             if (depositItem.files&&!this.curItem.files) {
                 depositItem.children.push(this.curItem)
-                this.del()
+                this.list.splice(this.curIndex, 1)
+                setItem('current_list', this.list)
+                // 
             }else {
                 let tempX = this.curItemX, tempY = this.curItemY
                 this.curItem.x = depositItem.x
@@ -667,10 +657,12 @@ export default {
             })
         },
         //删，
-        del(cb){
+        del(cb, isDrop){
+            let isRecycle = false
             for(let i = 0, l = this.list.length; i < l; i++) {
                 let h = this.list[i]
                 if (h.id === this.curItem.id) {
+                    if (h.title == '回收站') return this.$message('回收站不能删除')
                     this.list.splice(i, 1)
                     break;
                 }
@@ -678,9 +670,14 @@ export default {
                     h.children.map((k, ii) => {
                         if (k.id === this.curItem.id) {
                             h.children.splice(ii, 1)
+                            if (this.list[0].id == h.id) isRecycle = true
                         }
                     })
                 }
+            }
+            
+            if(!isRecycle&&!isDrop&&this.list[0].title == "回收站") {
+                this.list[0].children.push(this.curItem)
             }
             cb()
         },
@@ -691,7 +688,9 @@ export default {
               cancelButtonText: '取消',
               type: 'warning'
             }).then(() => {
-              this.list = getItem('init_list')
+              // this.list = getItem('init_list')
+              this.list = urlList
+              this.sortAuto()
               setItem('current_list', this.list)
             }).catch((e) => {
                 console.log(e)
@@ -699,6 +698,16 @@ export default {
         },
         changeShowList(e) {
             console.log(e)
+        },
+        changeShowBaidu(e) {
+            setItem('show-baidu', e)
+        },
+        changeIconSize(e) {
+            this.getWindowPosition()
+            setItem('icon-size', e)
+        },
+        chagneBgType(e) {
+            setItem('deskdop-bg-mode', e)
         }
     },
     destroyed() {
@@ -914,6 +923,27 @@ export default {
         }
         .list-del{
             flex: 1;
+        }
+    }
+
+    .gird-wrap{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0,0,0,0.2);
+        .top-line{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            border-left: 1px solid #e3e3e3;
+        }
+        .left-line{
+            position: fixed;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #e3e3e3;
         }
     }
 }

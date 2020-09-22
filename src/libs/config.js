@@ -1,13 +1,21 @@
 export let serveUrl = `http://localhost:3300`
 
 export function setItem (str, data) {
-	localStorage.setItem(str, JSON.stringify(data))
+	if (typeof data == 'object') {
+		localStorage.setItem(str, JSON.stringify(data))
+	}else{
+		localStorage.setItem(str, data)
+	}
 }
 
 export function getItem(str) {
 	let listStr = localStorage.getItem(str)
 	if (listStr) {
-		return JSON.parse(listStr)
+		if (listStr.indexOf('{')>-1&&listStr.indexOf('}')>-1) {
+			return JSON.parse(listStr)
+		} else {
+			return listStr
+		}
 	} else {
 		return null
 	}

@@ -1,9 +1,22 @@
 const ICO_PREP = 'http://www.google.cn/s2/favicons?domain='
 
 let urlList = [{
+    "title": "回收站",
+    "files": 1,
+    "x": 280,
+    "y": 455,
+    "show": 0,
+    "children": []
+},{
     "url": "http://www.baidu.com",
     "title": "百度",
     "icon": "http://www.google.cn/s2/favicons?domain=http://www.baidu.com",
+    "x": 0,
+    "y": 91
+},{
+    "url": "https://account.wps.cn",
+    "title": "金山文档",
+    "icon": "http://www.google.cn/s2/favicons?domain=https://account.wps.cn",
     "x": 0,
     "y": 91
 }, {
