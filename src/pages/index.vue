@@ -106,8 +106,8 @@
                         <div class="notify-list-right">
                             <template>
                                 <el-radio-group v-model="showBaidu" @change="changeShowBaidu">
-                                    <el-radio :label="'1'">是</el-radio>
-                                    <el-radio :label="'0'">否</el-radio>
+                                    <el-radio :label="1">是</el-radio>
+                                    <el-radio :label="0">否</el-radio>
                                 </el-radio-group>
                             </template>
                         </div>
@@ -251,7 +251,7 @@ export default {
             curItemX: 0,
             curItemY: 0,
             currentIndex: null,
-            showBaidu: getItem('show-baidu') || '0',  // 显示百度
+            showBaidu: Number(getItem('show-baidu')) || 0,  // 显示百度
             setMenu: {
                 top: 0,
                 left: 0
@@ -579,17 +579,25 @@ export default {
                 showCancelButton: true,
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
+                closeOnClickModal: false,
                 modal:false,
-                callback: (action, vm) => {
+                beforeClose: (action, instance, done) => {
                     if(action === 'confirm') {
-                        let ele = vm.$children[2]
+                        let ele = null
+                        for(let k of vm.$children) {
+                            if (k.hasOwnProperty('websiteName')) {
+                                ele = k
+                                break;
+                            }
+                        }
+                        if (!ele.website) return this.$message('请输入网址')
                         let obj = {
                             url: ele.website.indexOf('http') === -1 ? `http://${ele.website}` : ele.website,
                             title: ele.websiteName,
                             id: guid(),
                             icon: ele.imageBgUrl || `http://www.google.cn/s2/favicons?domain=${ele.website}`,
-                            x: this.xList[this.xList.length-1],
-                            y: this.yList[0]
+                            x: this.setMenu.left,
+                            y: this.setMenu.top
                         }
                         if(this.curItem&&this.curItem.files) {
                             this.curItem.children.push(obj)
@@ -597,9 +605,12 @@ export default {
                             this.list.push(obj)
                         }
                         cb()
+                        done()
+                    } else {
+                        done()
                     }
-                }
-            })
+                },
+            }).then(action=>{}).catch(action=>{})
         },
         // 增文件夹
         addFiles(cb) {
@@ -612,19 +623,27 @@ export default {
                 showCancelButton: true,
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
+                closeOnClickModal: false,
                 modal:false,
                 callback: (action, vm) => {
                     if(action === 'confirm') {
-                        let ele = vm.$children[2]
+                        let ele = null
+                        for(let k of vm.$children) {
+                            if (k.hasOwnProperty('websiteName')) {
+                                ele = k
+                                break;
+                            }
+                        }
                         let obj = {
                             title: ele.websiteName,
                             children: [],
                             id: guid(),
                             files: 1,
                             show: 0,
-                            x: this.xList[this.xList.length-1],
-                            y: this.yList[0]
+                            x: this.setMenu.left,
+                            y: this.setMenu.top
                         }
+
                         this.list.push(obj)
                         cb()
                     }
@@ -644,17 +663,27 @@ export default {
                 showCancelButton: true,
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
+                closeOnClickModal: false,
                 modal:false,
-                callback: (action, vm) => {
+                beforeClose: (action, instance, done) => {
                     if(action === 'confirm') {
-                        let ele = vm.$children[2]
+                        let ele = null
+                        for(let k of vm.$children) {
+                            if (k.hasOwnProperty('websiteName')) {
+                                ele = k
+                                break;
+                            }
+                        }
                         this.curItem.title = ele.websiteName
                         this.curItem.icon = ele.imageBgUrl
-                        this.curItem.url = ele.website.indexOf('http') === -1 ? `http://${ele.website}` : ele.website
+                        this.curItem.url = ele.website&&ele.website.indexOf('http') === -1 ? `http://${ele.website}` : ele.website
                         cb()
+                        done()
+                    } else {
+                        done()
                     }
-                }
-            })
+                },
+            }).then(action=>{}).catch(action=>{})
         },
         //删，
         del(cb, isDrop){
@@ -817,7 +846,7 @@ export default {
     }
 
     .notify-con {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         bottom: 0;

@@ -51,6 +51,7 @@
     </div>
 </template>
 <script>
+import { setItem, getItem, guid } from '../libs/config'
 
 export default {
     name: 'com-dialog',
@@ -100,7 +101,8 @@ export default {
         if(this.isBaidu) {
             this.marginLeft = 200
             this.marginTop = 40
-            this.curY = 60
+            this.curX = Number(getItem('baidu-p-x')) || `50%`
+            this.curY = Number(getItem('baidu-p-y')) || 60
         }
     },
     methods: {
@@ -116,6 +118,8 @@ export default {
             this.curY += e.movementY
         },
         onmouseup(e) {
+            setItem('baidu-p-x', this.curX)
+            setItem('baidu-p-y', this.curY)
             window.removeEventListener('mousemove', this.onmove)
             window.removeEventListener('mouseup', this.onmouseup)
         },

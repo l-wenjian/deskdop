@@ -42,6 +42,12 @@ let urlList = [{
     "x": 70,
     "y": 182
 },{
+    "url": "https://36kr.com/",
+    "title": "36氪",
+    "icon": "https://img.36krcdn.com/20191024/v2_1571894049839_img_jpg",
+    "x": 70,
+    "y": 182
+},{
     "url": "http://www.iqiyi.com/",
     "title": "爱奇艺",
     "icon": "http://www.google.cn/s2/favicons?domain=http://www.iqiyi.com/",
