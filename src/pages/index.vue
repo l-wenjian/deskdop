@@ -581,7 +581,7 @@ export default {
                 cancelButtonText: '取消',
                 closeOnClickModal: false,
                 modal:false,
-                beforeClose: (action, instance, done) => {
+                beforeClose: (action, vm, done) => {
                     if(action === 'confirm') {
                         let ele = null
                         for(let k of vm.$children) {
@@ -665,7 +665,7 @@ export default {
                 cancelButtonText: '取消',
                 closeOnClickModal: false,
                 modal:false,
-                beforeClose: (action, instance, done) => {
+                beforeClose: (action, vm, done) => {
                     if(action === 'confirm') {
                         let ele = null
                         for(let k of vm.$children) {
