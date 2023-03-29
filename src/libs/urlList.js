@@ -7,7 +7,16 @@ let urlList = [{
     "y": 455,
     "show": 0,
     "children": []
-},{
+},
+// {
+//     "title": "账号记录",
+//     "text": 1,
+//     "x": 280,
+//     "y": 455,
+//     "show": 0,
+//     "html": '密码：123456'
+// },
+{
     "url": "http://www.baidu.com",
     "title": "百度",
     "icon": "http://www.google.cn/s2/favicons?domain=http://www.baidu.com",
@@ -990,6 +999,8 @@ let urlList = [{
         "title": "阿里云",
         "icon": "http://www.google.cn/s2/favicons?domain=https://www.aliyun.com/"
     }]
-}]
+},{"url":"https://www.bilibili.com/","title":"哔哩哔哩","icon":"http://www.google.cn/s2/favicons?domain=https://www.bilibili.com/","x":560,"y":252,"id":"130"},{"url":"http://v.qq.com/","title":"腾讯视频","icon":"http://www.google.cn/s2/favicons?domain=http://v.qq.com/","id":"136","x":630,"y":252},{"url":"http://www.iqiyi.com/","title":"爱奇艺高清","icon":"http://www.google.cn/s2/favicons?domain=http://www.iqiyi.com/","id":"132","x":700,"y":252},{"url":"http://www.youku.com/","title":"优酷网","icon":"http://www.google.cn/s2/favicons?domain=http://www.youku.com/","id":"133","x":770,"y":252},{"url":"http://www.mgtv.com/","title":"芒果TV","icon":"http://www.google.cn/s2/favicons?domain=http://www.mgtv.com/","id":"137","x":490,"y":252},{"url":"https://www.ixigua.com","title":"西瓜视频","id":"1ornwu5g30f","icon":"http://www.google.cn/s2/favicons?domain=https://www.ixigua.com","x":840,"y":252}
+
+]
 
 export default urlList

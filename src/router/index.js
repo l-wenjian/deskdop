@@ -9,6 +9,12 @@ export let routeList = [
         meta: {},
     },
     {
+        path: '/frame',
+        name:'frame',
+        component: () => import ('@/pages/frame'),
+        meta: {},
+    },
+    {
         path: '/login',
         name:'login',
         component: () => import ('@/pages/login'),

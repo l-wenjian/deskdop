@@ -14,6 +14,7 @@
                 >
                     <div>
                         <span v-if="item.title == '回收站'" class="deskdop-list-icon" :style="{backgroundImage: `url(${recyclePng})`}" ></span>
+                        <span v-else-if="item.text" class="deskdop-list-icon" :style="{backgroundImage: `url(${textPng})`}" ></span>
                         <div v-else-if="item.files" class="deskdop-list-icon deskdop-files-bg">
                             <span class="files-icon-list" v-for="(child, childIndex) in item.children" v-if="childIndex < 9" :style="{backgroundImage: `url(${child.icon})`}"></span>
                         </div>
@@ -21,6 +22,7 @@
                     </div>
                     <span class="deskdop-list-txt" :title="item.title">{{item.title}}</span>
                 </div>
+                <!-- 文件夹 -->
                 <template v-if="item.files">
                     <div v-if="item.show">
                         <Dialog ref="dialogRef" 
@@ -32,6 +34,18 @@
                             :datas="item"
                             @close-dialog="closeDialog(item)" 
                             @handle-menu="handleMenu" />
+                    </div>
+                </template>
+                <!-- 文本文档 -->
+                <template v-if="item.text">
+                    <div v-if="item.show">
+                        <Dialog :is-text="true"
+                                :title="item.title" 
+                                :_index="index"
+                                :main-zoom="mainZoom"
+                                :datas="item"
+                                @close-dialog="closeDialog(item)"
+                                 />
                     </div>
                 </template>
             </section>
@@ -127,7 +141,10 @@
             </div>
         </template>
         <template v-if="showBaidu">
-            <Dialog :is-baidu="true" :main-zoom="mainZoom" :show-close="false" />
+            <Dialog :transparent-bg="true" :is-baidu="true" :main-zoom="mainZoom" :show-close="false" />
+        </template>
+        <template>
+            <Dialog :transparent-bg="true" :is-vip-resolve="true" :main-zoom="mainZoom" :show-close="false" />
         </template>
 
         <!-- 布局格子 -->
@@ -136,10 +153,12 @@
                 <div class="left-line" v-for="(hh, ii) in yList" :key="`${i}-${ii}`" :style="{top: `${hh}px`}"></div>
             </div>
         </div> -->
+
     </div>
 </template>
 <script>
 import recyclePng from "../assets/recycle.png";
+import textPng from "../assets/text.png";
 import bg from "../assets/bg.jpg";
 import Dialog from '../components/dialog'
 import SetForm from '../components/set'
@@ -227,6 +246,7 @@ export default {
         return {
             list: getItem('current_list') || urlList,
             recyclePng: recyclePng,
+            textPng: textPng,
             sort: "orderly",
             mouseDown: false,
             xList: [],
@@ -251,7 +271,7 @@ export default {
             curItemX: 0,
             curItemY: 0,
             currentIndex: null,
-            showBaidu: Number(getItem('show-baidu')) || 0,  // 显示百度
+            showBaidu: Number(getItem('show-baidu')) || '1',  // 显示百度
             setMenu: {
                 top: 0,
                 left: 0
@@ -372,7 +392,7 @@ export default {
             this.getWindowPosition()
         },
         handleDbclick(item, index) {
-            if(item.files) {
+            if(item.files) {  // 文件夹
                 if(!item.show) {
                     item.show = 1
                     if(this.$refs.dialogRef) {
@@ -395,6 +415,20 @@ export default {
                         }
                     }
                 }
+            } else if(item.text){  // 文本文档
+                 if(!item.show) {
+                    item.show = 1
+                    // if(this.$refs.dialogRef) {
+                    //     let num = 1
+                    //     for(let k of this.$refs.dialogRef) {
+                    //         if(k.curX == '50%') {
+                    //             k.curX = `${50 - num}%`
+                    //             k.curY = `${50 - num}%`
+                    //             num++
+                    //         }
+                    //     }
+                    // }
+                } 
             } else {
                 window.open(item.url)
             }

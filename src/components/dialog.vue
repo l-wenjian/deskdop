@@ -1,5 +1,5 @@
 <template>
-    <div :class="`dialog-con ${isBaidu ? 'has-baidu' : ''}`" 
+    <div :class="`dialog-con ${transparentBg ? 'has-baidu' : ''}`" 
         :style="{
             top:`${typeof curY == 'string' ? curY : curY + 'px'}`,
             left:`${typeof curX == 'string' ? curX : curX + 'px'}`,
@@ -48,6 +48,21 @@
                 </div>
             </div>
         </template>
+        <template v-if="isVipResolve">
+            <div class="baidu-con">
+                <div class="baidu-wrap">
+                    <div class="baidu-wrap-left">
+                        <el-input class="baidu-wrap-input" v-model="resolveValue" placeholder="" @keyup.enter.native="toVipResolve"></el-input>
+                    </div>
+                    <div class="baidu-wrap-right">
+                        <span class="baidu-wrap-search" @click="toVipResolve">解析路径</span>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template v-if="isText">
+            <div class="dialog-content" contenteditable="true" ref="textRef" v-html="datas.html" @input.stop="changeText"></div>
+        </template>
     </div>
 </template>
 <script>
@@ -72,6 +87,18 @@ export default {
             default: () => false,
             type: Boolean
         },
+        isVipResolve: {
+            default: () => false,
+            type: Boolean
+        },
+        transparentBg: {
+            default: () => false,
+            type: Boolean
+        },
+        isText: {
+            default: () => false,
+            type: Boolean
+        },
         showClose: {
             default: () => true,
             type: Boolean
@@ -88,6 +115,7 @@ export default {
             curY: '50%',
             zIndex: 1,
             searchValue: '',
+            resolveValue: '',
             marginLeft: 350,
             marginTop: 250,
         }
@@ -98,11 +126,18 @@ export default {
         this.$store.commit('setZIndex')
         this.zIndex = this.$store.state.zIndex.zIndex
         // window.addEventListener("mouseup", this.onmouseup);
-        if(this.isBaidu) {
+        if(this.isBaidu || this.isVipResolve) {  // 初始化赋值位置
             this.marginLeft = 200
             this.marginTop = 40
             this.curX = Number(getItem('baidu-p-x')) || `50%`
             this.curY = Number(getItem('baidu-p-y')) || 60
+            if(this.isVipResolve) {
+                this.curX = Number(getItem('resolve-p-x')) || `50%`
+                this.curY = Number(getItem('resolve-p-y')) || 40
+            }
+        }
+        if(this.isText) {
+            this.$refs.textRef.focus()
         }
     },
     methods: {
@@ -118,8 +153,14 @@ export default {
             this.curY += e.movementY
         },
         onmouseup(e) {
-            setItem('baidu-p-x', this.curX)
-            setItem('baidu-p-y', this.curY)
+            if(this.isBaidu) {
+                setItem('baidu-p-x', this.curX)
+                setItem('baidu-p-y', this.curY)
+            }
+            if(this.isVipResolve) {
+                setItem('resolve-p-x', this.curX)
+                setItem('resolve-p-y', this.curY)
+            }
             window.removeEventListener('mousemove', this.onmove)
             window.removeEventListener('mouseup', this.onmouseup)
         },
@@ -140,9 +181,15 @@ export default {
         toBaidu() {
             window.open(`https://www.baidu.com/s?wd=${this.searchValue}&ie=utf-8&oq=${encodeURIComponent(this.searchValue)}`)
         },
+        toVipResolve() {
+            window.open(`https://www.administrator5.com/index.php?url=${encodeURIComponent(this.resolveValue)}`)
+        },
         handleDown(e, item, index) {
             this.$emit('handle-down', e, item, index, this._index)
         },
+        changeText(e) {
+            console.log(e.target.innerHTML)
+        }
     },
     destroyed() {
         // window.removeEventListener('mouseup', this.onmouseup)
@@ -269,5 +316,5 @@ export default {
             border-left: 1px solid #e3e3e3;
         }
     }
-    }
+}
 </style>
