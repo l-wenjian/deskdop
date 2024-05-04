@@ -228,6 +228,11 @@ const setList = [
         icon: 'el-icon-s-grid',
         label: '初始化列表'
     },
+    // {
+    //     value: 'allUrl',
+    //     icon: 'el-icon-edit',
+    //     label: '所有网址'
+    // },
     {
         value: 'personalise',
         icon: 'el-icon-view',
@@ -311,10 +316,12 @@ export default {
                 
                 // 存放的位置判断
                 let curMask = null
-                for(let k of e.path) {
-                    if(k.className == "dialog-content"){
-                        curMask = k
-                        break
+                if(e.path) {
+                    for(let k of e.path) {
+                        if(k.className == "dialog-content"){
+                            curMask = k
+                            break
+                        }
                     }
                 }
                 if(curMask) {  // 移动到文件夹区域
@@ -569,7 +576,8 @@ export default {
         },
         // 获取网站图标
         getIco(url) {
-            return `http://www.google.cn/s2/favicons?domain=${url}`
+            // return `http://www.google.cn/s2/favicons?domain=${url}`
+            return `${url}favicon.ico`
         },
         // 检查位置 跟新
         checkPosition(p, e) {
@@ -629,7 +637,8 @@ export default {
                             url: ele.website.indexOf('http') === -1 ? `http://${ele.website}` : ele.website,
                             title: ele.websiteName,
                             id: guid(),
-                            icon: ele.imageBgUrl || `http://www.google.cn/s2/favicons?domain=${ele.website}`,
+                            // icon: ele.imageBgUrl || `http://www.google.cn/s2/favicons?domain=${ele.website}`,
+                            icon: ele.imageBgUrl || `${ele.website}/favicon.ico`,
                             x: this.setMenu.left,
                             y: this.setMenu.top
                         }

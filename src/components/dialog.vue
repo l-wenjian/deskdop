@@ -55,7 +55,7 @@
                         <el-input class="baidu-wrap-input" v-model="resolveValue" placeholder="" @keyup.enter.native="toVipResolve"></el-input>
                     </div>
                     <div class="baidu-wrap-right">
-                        <span class="baidu-wrap-search" @click="toVipResolve">解析路径</span>
+                        <span class="baidu-wrap-search" @click="toVipResolve">必应搜索</span>
                     </div>
                 </div>
             </div>
@@ -182,7 +182,7 @@ export default {
             window.open(`https://www.baidu.com/s?wd=${this.searchValue}&ie=utf-8&oq=${encodeURIComponent(this.searchValue)}`)
         },
         toVipResolve() {
-            window.open(`https://www.administrator5.com/index.php?url=${encodeURIComponent(this.resolveValue)}`)
+            window.open(`https://cn.bing.com/search?q=${encodeURIComponent(this.resolveValue)}`)
         },
         handleDown(e, item, index) {
             this.$emit('handle-down', e, item, index, this._index)

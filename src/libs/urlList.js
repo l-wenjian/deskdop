@@ -1,4 +1,4 @@
-const ICO_PREP = 'http://www.google.cn/s2/favicons?domain='
+const ICO_PREP = ''
 
 let urlList = [{
     "title": "回收站",
@@ -17,62 +17,38 @@ let urlList = [{
 //     "html": '密码：123456'
 // },
 {
-    "url": "http://www.baidu.com",
-    "title": "百度",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://www.baidu.com",
-    "x": 0,
-    "y": 91
-},{
     "url": "https://account.wps.cn",
     "title": "金山文档",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://account.wps.cn",
+    "icon": "https://account.wps.cn/favicon.ico",
     "x": 0,
     "y": 91
 }, {
     "url": "http://map.baidu.com/",
     "title": "百度地图",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://map.baidu.com/",
+    "icon": "http://map.baidu.com/favicon.ico",
     "x": 0,
     "y": 91
-},{
+}, {
     "url": "https://pan.baidu.com",
     "title": "百度网盘",
     "icon": "https://pan.baidu.com/static/images/favicon.ico"
-},{
-    "url": "https://union-click.jd.com/",
-    "title": "京东",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://union-click.jd.com/",
-    "x": 70,
-    "y": 91
-},{
-    "url": "https://www.taobao.com/",
-    "title": "淘宝网",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://www.taobao.com/",
-    "x": 70,
-    "y": 182
-},{
+}, {
     "url": "https://36kr.com/",
     "title": "36氪",
     "icon": "https://img.36krcdn.com/20191024/v2_1571894049839_img_jpg",
     "x": 70,
     "y": 182
-},{
-    "url": "http://www.iqiyi.com/",
-    "title": "爱奇艺",
-    "icon": "http://www.google.cn/s2/favicons?domain=http://www.iqiyi.com/",
-    "x": 70,
-    "y": 182
 }, {
-    "url": "https://translate.google.cn",
-    "title": "谷歌翻译",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://translate.google.cn",
+    "url": "https://fanyi.baidu.com",
+    "title": "百度翻译",
+    "icon": "https://fanyi.baidu.com/favicon.ico",
     "x": 0,
     "y": 91
 },
 {
     "url": "https://weibo.com/",
     "title": "微博",
-    "icon": "http://www.google.cn/s2/favicons?domain=https://weibo.com/",
+    "icon": "https://weibo.com/favicon.ico",
     "x": 0,
     "y": 91
 }, {
@@ -82,49 +58,49 @@ let urlList = [{
     "y": 455,
     "show": 0,
     "children": [
-    {
-        "url": "https://www.bilibili.com/",
-        "title": "哔哩哔哩",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.bilibili.com/",
-        "x": 140,
-        "y": 273
-    },{
-        "url": "https://haokan.baidu.com/",
-        "title": "好看视频",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://haokan.baidu.com/"
-    }, {
-        "url": "http://www.iqiyi.com/",
-        "title": "爱奇艺高清",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.iqiyi.com/"
-    }, {
-        "url": "http://www.youku.com/",
-        "title": "优酷网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.youku.com/"
-    }, {
-        "url": "http://v.baidu.com/",
-        "title": "百度视频",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://v.baidu.com/"
-    }, {
-        "url": "https://quanmin.baidu.com/",
-        "title": "全民小视频",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://quanmin.baidu.com/"
-    }, {
-        "url": "http://v.qq.com/",
-        "title": "腾讯视频",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://v.qq.com/"
-    }, {
-        "url": "http://www.mgtv.com/",
-        "title": "芒果TV",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.mgtv.com/"
-    }, {
-        "url": "https://tv.sohu.com/",
-        "title": "搜狐视频",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://tv.sohu.com/"
-    }, {
-        "url": "http://www.pptv.com/",
-        "title": "PPTV",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.pptv.com/"
-    }]
+        {
+            "url": "https://www.bilibili.com/",
+            "title": "哔哩哔哩",
+            "icon": "https://www.bilibili.com/favicon.ico",
+            "x": 140,
+            "y": 273
+        }, {
+            "url": "https://haokan.baidu.com/",
+            "title": "好看视频",
+            "icon": "https://haokan.baidu.com/favicon.ico"
+        }, {
+            "url": "http://www.iqiyi.com/",
+            "title": "爱奇艺高清",
+            "icon": "http://www.iqiyi.com/favicon.ico"
+        }, {
+            "url": "http://www.youku.com/",
+            "title": "优酷网",
+            "icon": "http://www.youku.com/favicon.ico"
+        }, {
+            "url": "http://v.baidu.com/",
+            "title": "百度视频",
+            "icon": "http://v.baidu.com/favicon.ico"
+        }, {
+            "url": "https://quanmin.baidu.com/",
+            "title": "全民小视频",
+            "icon": "https://quanmin.baidu.com/favicon.ico"
+        }, {
+            "url": "http://v.qq.com/",
+            "title": "腾讯视频",
+            "icon": "http://v.qq.com/favicon.ico"
+        }, {
+            "url": "http://www.mgtv.com/",
+            "title": "芒果TV",
+            "icon": "http://www.mgtv.com/favicon.ico"
+        }, {
+            "url": "https://tv.sohu.com/",
+            "title": "搜狐视频",
+            "icon": "https://tv.sohu.com/favicon.ico"
+        }, {
+            "url": "http://www.pptv.com/",
+            "title": "PPTV",
+            "icon": "http://www.pptv.com/favicon.ico"
+        }]
 }, {
     "title": "新闻",
     "files": 1,
@@ -134,39 +110,39 @@ let urlList = [{
     "children": [{
         "url": "http://news.sina.com.cn/",
         "title": "新浪新闻",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://news.sina.com.cn/"
+        "icon": "http://news.sina.com.cn/favicon.ico"
     }, {
         "url": "http://www.qq.com/",
         "title": "腾讯新闻",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.qq.com/"
+        "icon": "http://www.qq.com/favicon.ico"
     }, {
         "url": "https://www.guancha.cn/",
         "title": "观察者网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.guancha.cn/"
+        "icon": "https://www.guancha.cn/favicon.ico"
     }, {
         "url": "http://news.sohu.com/",
         "title": "搜狐新闻",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://news.sohu.com/"
+        "icon": "http://news.sohu.com/favicon.ico"
     }, {
         "url": "http://www.cankaoxiaoxi.com/",
         "title": "参考消息",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.cankaoxiaoxi.com/"
+        "icon": "http://www.cankaoxiaoxi.com/favicon.ico"
     }, {
         "url": "http://www.huanqiu.com/",
         "title": "环球网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.huanqiu.com/"
+        "icon": "http://www.huanqiu.com/favicon.ico"
     }, {
         "url": "https://junshi.china.com/",
         "title": "中华军事",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://junshi.china.com/"
+        "icon": "https://junshi.china.com/favicon.ico"
     }, {
         "url": "http://news.ifeng.com/mil/",
         "title": "凤凰军事",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://news.ifeng.com/mil/"
+        "icon": "http://news.ifeng.com/mil/favicon.ico"
     }, {
         "url": "http://www.miercn.com/",
         "title": "米尔军事",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.miercn.com/"
+        "icon": "http://www.miercn.com/favicon.ico"
     }]
 }, {
     "title": "综合",
@@ -177,115 +153,115 @@ let urlList = [{
     "children": [{
         "url": "http://www.sina.com.cn/",
         "title": "新浪",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.sina.com.cn/",
+        "icon": "http://www.sina.com.cn/favicon.ico",
         "x": 0,
         "y": 91
-    },  {
+    }, {
         "url": "http://www.sohu.com/",
         "title": "搜狐",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.sohu.com/",
+        "icon": "http://www.sohu.com/favicon.ico",
         "x": 0,
         "y": 91
     }, {
         "url": "http://www.qq.com/",
         "title": "腾讯",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.qq.com/",
+        "icon": "http://www.qq.com/favicon.ico",
         "x": 0,
         "y": 91
     }, {
         "url": "http://www.163.com/",
         "title": "网易",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.163.com/",
+        "icon": "http://www.163.com/favicon.ico",
         "x": 0,
         "y": 91
-    },{
+    }, {
         "url": "https://www.douban.com/",
         "title": "豆瓣网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.douban.com/",
+        "icon": "https://www.douban.com/favicon.ico",
         "x": 280,
         "y": 455
-    },{
+    }, {
         "url": "https://www.gaodun.com",
         "title": "高顿教育",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.gaodun.com"
+        "icon": "https://www.gaodun.com/favicon.ico"
     }, {
         "url": "https://www.58pic.com/",
         "title": "千图网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.58pic.com/"
+        "icon": "https://www.58pic.com/favicon.ico"
     }, {
         "url": "https://wenku.baidu.com/",
         "title": "百度文库",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://wenku.baidu.com/"
+        "icon": "https://wenku.baidu.com/favicon.ico"
     }, {
         "url": "https://www.275.com/",
         "title": "学霸说保险网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.275.com/"
+        "icon": "https://www.275.com/favicon.ico"
     }, {
         "url": "https://open.163.com",
         "title": "网易公开课",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://open.163.com"
+        "icon": "https://open.163.com/favicon.ico"
     }, {
         "url": "https://www.csdn.net/",
         "title": "CSDN社区",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.csdn.net/"
+        "icon": "https://www.csdn.net/favicon.ico"
     }, {
         "url": "http://www.weatherol.com",
         "title": "本地天气",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.weatherol.com"
+        "icon": "http://www.weatherol.com/favicon.ico"
     }, {
         "url": "http://www.pbccrc.org.cn/",
         "title": "征信中心",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.pbccrc.org.cn/"
+        "icon": "http://www.pbccrc.org.cn/favicon.ico"
     }, {
         "url": "http://www.cpta.com.cn/",
         "title": "人事考试网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.cpta.com.cn/",
+        "icon": "http://www.cpta.com.cn/favicon.ico",
         "x": 280,
         "y": 455
-    },{
+    }, {
         "url": "http://e.baidu.com/",
         "title": "百度营销",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://e.baidu.com/"
-    },{
+        "icon": "http://e.baidu.com/favicon.ico"
+    }, {
         "url": "https://www.chsi.com.cn/",
         "title": "学信网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.chsi.com.cn/",
+        "icon": "https://www.chsi.com.cn/favicon.ico",
         "x": 210,
         "y": 364
-    },{
+    }, {
         "url": "https://www.icourse163.org/",
         "title": "中国大学MOOC",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.icourse163.org/",
+        "icon": "https://www.icourse163.org/favicon.ico",
         "x": 210,
         "y": 364
     }, {
         "url": "http://www.12306.cn/",
         "title": "12306",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.12306.cn/",
+        "icon": "http://www.12306.cn/favicon.ico",
         "x": 210,
         "y": 364
     }, {
         "url": "https://www.qcc.com/",
         "title": "企查查",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.qcc.com/",
+        "icon": "https://www.qcc.com/favicon.ico",
         "x": 210,
         "y": 364
-    },{
+    }, {
         "url": "http://www.cnki.net/",
         "title": "知网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.cnki.net/",
+        "icon": "http://www.cnki.net/favicon.ico",
         "x": 140,
         "y": 273
     }, {
         "url": "http://www.zhihu.com/",
         "title": "知乎",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.zhihu.com/",
+        "icon": "http://www.zhihu.com/favicon.ico",
         "x": 140,
         "y": 273
     }, {
         "url": "http://xueshu.baidu.com/",
         "title": "百度学术",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://xueshu.baidu.com/",
+        "icon": "http://xueshu.baidu.com/favicon.ico",
         "x": 210,
         "y": 364
     },]
@@ -298,55 +274,55 @@ let urlList = [{
     "children": [{
         "url": "https://s.click.taobao.com/",
         "title": "爱淘宝",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://s.click.taobao.com/"
+        "icon": "https://s.click.taobao.com/favicon.ico"
     }, {
         "url": "https://www.suning.com/",
         "title": "苏宁易购",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.suning.com/"
+        "icon": "https://www.suning.com/favicon.ico"
     }, {
         "url": "https://mos.m.taobao.com/",
         "title": "聚划算",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://mos.m.taobao.com/"
+        "icon": "https://mos.m.taobao.com/favicon.ico"
     }, {
         "url": "https://s.click.taobao.com",
         "title": "天猫特卖",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://s.click.taobao.com"
+        "icon": "https://s.click.taobao.com/favicon.ico"
     }, {
-        "url": "https://union-click.jd.com/",
+        "url": "https://www.jd.com/",
         "title": "京东商城",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://union-click.jd.com/"
+        "icon": "https://www.jd.com/favicon.ico"
     }, {
         "url": "https://s.click.taobao.com/",
         "title": "天猫超市",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://s.click.taobao.com/"
+        "icon": "https://s.click.taobao.com/favicon.ico"
     }, {
-        "url": "https://p.yiqifa.org/5WB6Sl",
+        "url": "https://p.yiqifa.org",
         "title": "唯品会",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://p.yiqifa.org/5WB6Sl",
+        "icon": "https://p.yiqifa.org/favicon.ico",
         "x": 140,
         "y": 273
     }, {
         "url": "https://qiang.suning.com",
         "title": "苏宁秒杀",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://qiang.suning.com",
+        "icon": "https://qiang.suning.com/favicon.ico",
         "x": 140,
         "y": 273
-    },{
+    }, {
         "url": "http://www.dangdang.com/",
         "title": "当当网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.dangdang.com/"
+        "icon": "http://www.dangdang.com/favicon.ico"
     }, {
         "url": "https://www.taobao.com/",
         "title": "淘宝网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.taobao.com/"
+        "icon": "https://www.taobao.com/favicon.ico"
     }, {
         "url": "http://www.mogujie.com/",
         "title": "蘑菇街",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.mogujie.com/"
+        "icon": "http://www.mogujie.com/favicon.ico"
     }, {
         "url": "https://www.1688.com/",
         "title": "1688",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.1688.com/"
+        "icon": "https://www.1688.com/favicon.ico"
     }]
 }, {
     "title": "游戏",
@@ -357,31 +333,31 @@ let urlList = [{
     "children": [{
         "url": "http://www.4399.com/",
         "title": "4399游戏",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.4399.com/"
+        "icon": "http://www.4399.com/4399.com/"
     }, {
         "url": "http://game.baidu.com/",
         "title": "百度游戏",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://game.baidu.com/"
+        "icon": "http://game.baidu.com/favicon.ico"
     }, {
         "url": "https://syzs.qq.com/",
         "title": "王者荣耀",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://syzs.qq.com/"
+        "icon": "https://syzs.qq.com/favicon.ico"
     }, {
         "url": "http://www.7k7k.com/",
         "title": "7k7k游戏",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.7k7k.com/"
+        "icon": "http://www.7k7k.com/favicon.ico"
     }, {
         "url": "http://www.17173.com/",
         "title": "17173",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.17173.com/"
+        "icon": "http://www.17173.com/favicon.ico"
     }, {
         "url": "http://www.gamersky.com/",
         "title": "游民星空",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.gamersky.com/"
+        "icon": "http://www.gamersky.com/favicon.ico"
     }, {
         "url": "http://game.baidu.com/",
         "title": "百度游戏",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://game.baidu.com/"
+        "icon": "http://game.baidu.com/favicon.ico"
     }]
 }, {
     "title": "体育",
@@ -392,39 +368,39 @@ let urlList = [{
     "children": [{
         "url": "http://sports.sina.com.cn/",
         "title": "新浪体育",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://sports.sina.com.cn/"
+        "icon": "http://sports.sina.com.cn/favicon.ico"
     }, {
         "url": "http://sports.sohu.com/",
         "title": "搜狐体育",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://sports.sohu.com/"
+        "icon": "http://sports.sohu.com/favicon.ico"
     }, {
         "url": "http://sports.cntv.cn/",
         "title": "CCTV5",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://sports.cntv.cn/"
+        "icon": "http://sports.cntv.cn/favicon.ico"
     }, {
         "url": "https://www.hupu.com/",
         "title": "虎扑体育",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.hupu.com/"
+        "icon": "https://www.hupu.com/favicon.ico"
     }, {
         "url": "http://www.zhibo8.cc/",
         "title": "直播吧",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.zhibo8.cc/"
+        "icon": "http://www.zhibo8.cc/favicon.ico"
     }, {
         "url": "http://sports.163.com/",
         "title": "网易体育",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://sports.163.com/"
+        "icon": "http://sports.163.com/favicon.ico"
     }, {
         "url": "http://sports.qq.com/",
         "title": "腾讯体育",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://sports.qq.com/"
+        "icon": "http://sports.qq.com/favicon.ico"
     }, {
         "url": "http://sports.ifeng.com/",
         "title": "凤凰体育",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://sports.ifeng.com/"
+        "icon": "http://sports.ifeng.com/favicon.ico"
     }, {
         "url": "http://sports.iqiyi.com/",
         "title": "爱奇艺体育",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://sports.iqiyi.com/"
+        "icon": "http://sports.iqiyi.com/favicon.ico"
     }]
 }, {
     "title": "小说",
@@ -435,38 +411,34 @@ let urlList = [{
     "children": [{
         "url": "http://www.qidian.com/",
         "title": "起点中文",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.qidian.com/"
+        "icon": "http://www.qidian.com/favicon.ico"
     }, {
         "url": "https://b.faloo.com/",
         "title": "飞卢小说",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://b.faloo.com/"
+        "icon": "https://b.faloo.com/favicon.ico"
     }, {
         "url": "http://www.xxsy.net/",
         "title": "潇湘书院",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.xxsy.net/"
+        "icon": "http://www.xxsy.net/favicon.ico"
     }, {
         "url": "http://www.readnovel.com/",
         "title": "小说阅读",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.readnovel.com/"
+        "icon": "http://www.readnovel.com/favicon.ico"
     }, {
         "url": "http://www.jjwxc.net/",
         "title": "晋江文学城",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.jjwxc.net/"
-    }, {
-        "url": "http://www.lrts.me/",
-        "title": "懒人听书",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.lrts.me/"
+        "icon": "http://www.jjwxc.net/favicon.ico"
     }, {
         "url": "http://www.zongheng.com/",
         "title": "纵横中文网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.zongheng.com/"
+        "icon": "http://www.zongheng.com/favicon.ico"
     }, {
         "url": "https://www.hongxiu.com/",
         "title": "红袖添香",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.hongxiu.com/"
+        "icon": "https://www.hongxiu.com/favicon.ico"
     }]
 }, {
-    "title": "手机",
+    "title": "手机商城",
     "files": 1,
     "x": 350,
     "y": 546,
@@ -474,43 +446,43 @@ let urlList = [{
     "children": [{
         "url": "http://www.zol.com.cn/",
         "title": "中关村在线",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.zol.com.cn/"
+        "icon": "http://www.zol.com.cn/favicon.ico"
     }, {
         "url": "http://mobile.pconline.com.cn/",
         "title": "太平洋手机",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://mobile.pconline.com.cn/"
+        "icon": "http://mobile.pconline.com.cn/favicon.ico"
     }, {
         "url": "http://www.ithome.com/",
         "title": "IT之家",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.ithome.com/"
+        "icon": "http://www.ithome.com/favicon.ico"
     }, {
         "url": "http://www.10086.cn/",
         "title": "移动",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.10086.cn/"
+        "icon": "http://www.10086.cn/favicon.ico"
     }, {
         "url": "http://www.skycn.com/",
         "title": "软件中心",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.skycn.com/"
+        "icon": "http://www.skycn.com/favicon.ico"
     }, {
         "url": "http://www.onlinedown.net/",
         "title": "华军软件园",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.onlinedown.net/"
+        "icon": "http://www.onlinedown.net/favicon.ico"
     }, {
         "url": "https://shouji.baidu.com/",
         "title": "百度手机助手",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://shouji.baidu.com/"
+        "icon": "https://shouji.baidu.com/favicon.ico"
     }, {
         "url": "http://www.mi.com/",
         "title": "小米官网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.mi.com/"
+        "icon": "http://www.mi.com/favicon.ico"
     }, {
         "url": "https://www.vmall.com/",
         "title": "华为官网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.vmall.com/"
+        "icon": "https://www.vmall.com/favicon.ico"
     }, {
         "url": "https://www.apple.com/cn/",
         "title": "苹果手机",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.apple.com/cn/"
+        "icon": "https://www.apple.com/cn/favicon.ico"
     }]
 }, {
     "title": "社交直播",
@@ -521,55 +493,55 @@ let urlList = [{
     "children": [{
         "url": "http://www.jiayuan.com/",
         "title": "世纪佳缘",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.jiayuan.com/"
+        "icon": "http://www.jiayuan.com/favicon.ico"
     }, {
         "url": "http://www.zhenai.com/",
         "title": "珍爱网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.zhenai.com/"
+        "icon": "http://www.zhenai.com/favicon.ico"
     }, {
         "url": "http://www.baihe.com/",
         "title": "百合网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.baihe.com/"
+        "icon": "http://www.baihe.com/favicon.ico"
     }, {
         "url": "http://www.tianya.cn/",
         "title": "天涯社区",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.tianya.cn/"
+        "icon": "http://www.tianya.cn/favicon.ico"
     }, {
         "url": "http://qzone.qq.com/",
         "title": "QQ空间",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://qzone.qq.com/"
+        "icon": "http://qzone.qq.com/favicon.ico"
     }, {
         "url": "http://www.mop.com/",
         "title": "猫扑",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.mop.com/"
+        "icon": "http://www.mop.com/favicon.ico"
     }, {
         "url": "https://www.douyu.com/",
         "title": "斗鱼TV",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.douyu.com/"
+        "icon": "https://www.douyu.com/favicon.ico"
     }, {
         "url": "https://www.yy.com/",
         "title": "YY直播",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.yy.com/"
+        "icon": "https://www.yy.com/favicon.ico"
     }, {
         "url": "https://egame.qq.com/",
         "title": "企鹅电竞",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://egame.qq.com/"
-    },{
+        "icon": "https://egame.qq.com/favicon.ico"
+    }, {
         "url": "http://www.huya.com/",
         "title": "虎牙直播",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.huya.com/",
+        "icon": "http://www.huya.com/favicon.ico",
         "x": 140,
         "y": 273
-    },{
+    }, {
         "url": "https://www.acfun.cn/",
         "title": "AcFun弹幕",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.acfun.cn/",
+        "icon": "https://www.acfun.cn/favicon.ico",
         "x": 210,
         "y": 273
     }, {
         "url": "http://v.6.cn/",
         "title": "六间房直播",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://v.6.cn/",
+        "icon": "http://v.6.cn/favicon.ico",
         "x": 140,
         "y": 273
     },
@@ -583,55 +555,55 @@ let urlList = [{
     "children": [{
         "url": "http://jump.luna.58.com/",
         "title": "58同城",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://jump.luna.58.com/",
+        "icon": "http://jump.luna.58.com/favicon.ico",
         "x": 140,
         "y": 273
-    },{
+    }, {
         "url": "http://www.ganji.com/",
         "title": "赶集网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.ganji.com/"
-    },{
+        "icon": "http://www.ganji.com/favicon.ico"
+    }, {
         "url": "https://www.hupu.com/",
         "title": "虎扑社区",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.hupu.com/",
+        "icon": "https://www.hupu.com/favicon.ico",
         "x": 210,
         "y": 364
     }, {
         "url": "https://www.anjuke.com/",
         "title": "安居客",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.anjuke.com/"
+        "icon": "https://www.anjuke.com/favicon.ico"
     }, {
         "url": "http://www.fang.com/",
         "title": "房天下",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.fang.com/"
+        "icon": "http://www.fang.com/favicon.ico"
     }, {
         "url": "http://www.lianjia.com/",
         "title": "链家网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.lianjia.com/"
+        "icon": "http://www.lianjia.com/favicon.ico"
     }, {
         "url": "http://www.baixing.com/",
         "title": "百姓网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.baixing.com/"
+        "icon": "http://www.baixing.com/favicon.ico"
     }, {
         "url": "http://www.xiachufang.com/",
         "title": "下厨房",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.xiachufang.com/"
+        "icon": "http://www.xiachufang.com/favicon.ico"
     }, {
         "url": "http://www.dianping.com/",
         "title": "大众点评",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.dianping.com/"
+        "icon": "http://www.dianping.com/favicon.ico"
     }, {
         "url": "https://www.tianyancha.com/",
         "title": "天眼查",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.tianyancha.com/"
+        "icon": "https://www.tianyancha.com/favicon.ico"
     }, {
         "url": "https://meituan.com/",
         "title": "美团网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://meituan.com/"
+        "icon": "https://meituan.com/favicon.ico"
     }, {
         "url": "https://www.damai.cn/",
         "title": "大麦网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.damai.cn/"
+        "icon": "https://www.damai.cn/favicon.ico"
     },]
 }, {
     "title": "旅游",
@@ -642,39 +614,39 @@ let urlList = [{
     "children": [{
         "url": "https://www.ctrip.com/",
         "title": "携程网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.ctrip.com/"
+        "icon": "https://www.ctrip.com/favicon.ico"
     }, {
         "url": "http://www.elong.com/",
         "title": "艺龙旅行网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.elong.com/"
+        "icon": "http://www.elong.com/favicon.ico"
     }, {
         "url": "https://s.click.taobao.com/8EHlH1w",
         "title": "飞猪旅行",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://s.click.taobao.com/8EHlH1w"
+        "icon": "https://s.click.taobao.com/8EHlH1wfavicon.ico"
     }, {
         "url": "https://www.12306.cn/",
         "title": "12306",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.12306.cn/"
+        "icon": "https://www.12306.cn/favicon.ico"
     }, {
         "url": "http://www.mafengwo.cn/",
         "title": "马蜂窝",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.mafengwo.cn/"
+        "icon": "http://www.mafengwo.cn/favicon.ico"
     }, {
         "url": "http://www.tuniu.com/",
         "title": "途牛",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.tuniu.com/"
+        "icon": "http://www.tuniu.com/favicon.ico"
     }, {
         "url": "http://www.qyer.com/",
         "title": "穷游网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.qyer.com/"
+        "icon": "http://www.qyer.com/favicon.ico"
     }, {
         "url": "http://www.lvmama.com/",
         "title": "驴妈妈",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.lvmama.com/"
+        "icon": "http://www.lvmama.com/favicon.ico"
     }, {
         "url": "https://www.ly.com/",
         "title": "同程网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.ly.com/"
+        "icon": "https://www.ly.com/favicon.ico"
     }]
 }, {
     "title": "招聘",
@@ -685,43 +657,43 @@ let urlList = [{
     "children": [{
         "url": "http://www.51job.com/",
         "title": "前程无忧",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.51job.com/"
+        "icon": "http://www.51job.com/favicon.ico"
     }, {
         "url": "https://www.liepin.com/",
         "title": "猎聘",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.liepin.com/"
+        "icon": "https://www.liepin.com/favicon.ico"
     }, {
         "url": "http://www.yingjiesheng.com/",
         "title": "应届生求职",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.yingjiesheng.com/"
+        "icon": "http://www.yingjiesheng.com/favicon.ico"
     }, {
         "url": "http://www.chinahr.com/",
         "title": "中华英才",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.chinahr.com/"
+        "icon": "http://www.chinahr.com/favicon.ico"
     }, {
         "url": "https://www.lagou.com/",
         "title": "拉勾",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.lagou.com/"
+        "icon": "https://www.lagou.com/favicon.ico"
     }, {
         "url": "https://www.dajie.com/",
         "title": "大街",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.dajie.com/"
+        "icon": "https://www.dajie.com/favicon.ico"
     }, {
         "url": "https://www.zhipin.com/",
         "title": "BOSS直聘",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.zhipin.com/"
+        "icon": "https://www.zhipin.com/favicon.ico"
     }, {
         "url": "https://www.shixiseng.com/",
         "title": "实习僧",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.shixiseng.com/"
+        "icon": "https://www.shixiseng.com/favicon.ico"
     }, {
         "url": "https://www.kanzhun.com/",
         "title": "看准网",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.kanzhun.com/"
+        "icon": "https://www.kanzhun.com/favicon.ico"
     }, {
         "url": "http://www.gaoxiaojob.com/",
         "title": "高校人才网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.gaoxiaojob.com/"
+        "icon": "http://www.gaoxiaojob.com/favicon.ico"
     }]
 }, {
     "title": "汽车",
@@ -732,39 +704,39 @@ let urlList = [{
     "children": [{
         "url": "https://jumpluna.58.com/",
         "title": "58二手车",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://jumpluna.58.com/"
+        "icon": "https://jumpluna.58.com/favicon.ico"
     }, {
         "url": "https://youjia.baidu.com/",
         "title": "百度有驾",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://youjia.baidu.com/"
+        "icon": "https://youjia.baidu.com/favicon.ico"
     }, {
         "url": "http://www.pcauto.com.cn/",
         "title": "太平洋汽车",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.pcauto.com.cn/"
+        "icon": "http://www.pcauto.com.cn/favicon.ico"
     }, {
         "url": "http://www.bitauto.com/",
         "title": "易车网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.bitauto.com/"
+        "icon": "http://www.bitauto.com/favicon.ico"
     }, {
         "url": "http://auto.sina.com.cn/",
         "title": "新浪汽车",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://auto.sina.com.cn/"
+        "icon": "http://auto.sina.com.cn/favicon.ico"
     }, {
         "url": "http://auto.ifeng.com/",
         "title": "凤凰汽车",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://auto.ifeng.com/"
+        "icon": "http://auto.ifeng.com/favicon.ico"
     }, {
         "url": "http://www.xcar.com.cn/",
         "title": "爱卡汽车",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.xcar.com.cn/"
+        "icon": "http://www.xcar.com.cn/favicon.ico"
     }, {
         "url": "http://auto.sohu.com/",
         "title": "搜狐汽车",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://auto.sohu.com/"
+        "icon": "http://auto.sohu.com/favicon.ico"
     }, {
         "url": "http://auto.qq.com/",
         "title": "腾讯汽车",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://auto.qq.com/"
+        "icon": "http://auto.qq.com/favicon.ico"
     }]
 }, {
     "title": "音乐",
@@ -775,43 +747,43 @@ let urlList = [{
     "children": [{
         "url": "http://music.taihe.com/",
         "title": "千千音乐",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://music.taihe.com/"
+        "icon": "http://music.taihe.com/favicon.ico"
     }, {
         "url": "http://www.kugou.com/",
         "title": "酷狗音乐",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.kugou.com/"
+        "icon": "http://www.kugou.com/favicon.ico"
     }, {
         "url": "http://music.163.com/",
         "title": "网易云音乐",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://music.163.com/"
+        "icon": "http://music.163.com/favicon.ico"
     }, {
         "url": "http://y.qq.com/",
         "title": "QQ音乐",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://y.qq.com/"
+        "icon": "http://y.qq.com/favicon.ico"
     }, {
         "url": "http://fm.taihe.com/",
         "title": "随心听",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://fm.taihe.com/"
+        "icon": "http://fm.taihe.com/favicon.ico"
     }, {
         "url": "http://www.xiami.com/",
         "title": "虾米音乐",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.xiami.com/"
+        "icon": "http://www.xiami.com/favicon.ico"
     }, {
-        "url": "http://music.migu.cn/v3",
+        "url": "http://music.migu.cn",
         "title": "咪咕音乐",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://music.migu.cn/v3"
+        "icon": "http://music.migu.cn/favicon.ico"
     }, {
         "url": "http://www.kuwo.cn/",
         "title": "酷我音乐",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.kuwo.cn/"
+        "icon": "http://www.kuwo.cn/favicon.ico"
     }, {
         "url": "http://changba.com/",
         "title": "唱吧",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://changba.com/"
-    },{
+        "icon": "http://changba.com/favicon.ico"
+    }, {
         "url": "https://www.ximalaya.com/",
         "title": "喜马拉雅FM",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.ximalaya.com/",
+        "icon": "https://www.ximalaya.com/favicon.ico",
         "x": 140,
         "y": 182
     },]
@@ -824,47 +796,43 @@ let urlList = [{
     "children": [{
         "url": "http://www.eastmoney.com/",
         "title": "东方财富",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.eastmoney.com/"
+        "icon": "http://www.eastmoney.com/favicon.ico"
     }, {
         "url": "http://finance.sina.com.cn/",
         "title": "新浪财经",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://finance.sina.com.cn/"
+        "icon": "http://finance.sina.com.cn/favicon.ico"
     }, {
         "url": "http://www.stockstar.com/",
         "title": "证券之星",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.stockstar.com/"
-    }, {
-        "url": "http://www.cnfol.com/",
-        "title": "中金在线",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.cnfol.com/"
+        "icon": "http://www.stockstar.com/favicon.ico"
     }, {
         "url": "http://finance.ifeng.com/",
         "title": "凤凰财经",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://finance.ifeng.com/"
+        "icon": "http://finance.ifeng.com/favicon.ico"
     }, {
         "url": "http://www.jrj.com.cn/",
         "title": "金融界",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.jrj.com.cn/"
+        "icon": "http://www.jrj.com.cn/favicon.ico"
     }, {
         "url": "http://www.hexun.com/",
         "title": "和讯网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.hexun.com/"
+        "icon": "http://www.hexun.com/favicon.ico"
     }, {
         "url": "http://xueqiu.com/",
         "title": "雪球",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://xueqiu.com/"
+        "icon": "http://xueqiu.com/favicon.ico"
     }, {
         "url": "http://guba.eastmoney.com/",
         "title": "股吧",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://guba.eastmoney.com/"
+        "icon": "http://guba.eastmoney.com/favicon.ico"
     }, {
         "url": "https://www.yicai.com/",
         "title": "第一财经",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.yicai.com/"
+        "icon": "https://www.yicai.com/favicon.ico"
     }, {
         "url": "http://www.p5w.net/",
         "title": "全景网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.p5w.net/"
+        "icon": "http://www.p5w.net/favicon.ico"
     }]
 }, {
     "title": "彩票",
@@ -875,39 +843,39 @@ let urlList = [{
     "children": [{
         "url": "http://www.lottery.gov.cn/",
         "title": "中国体彩",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.lottery.gov.cn/"
+        "icon": "http://www.lottery.gov.cn/favicon.ico"
     }, {
         "url": "http://lottery.sina.com.cn/",
         "title": "新浪彩票",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://lottery.sina.com.cn/"
+        "icon": "http://lottery.sina.com.cn/favicon.ico"
     }, {
         "url": "http://www.sporttery.cn/",
         "title": "竞彩网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.sporttery.cn/"
+        "icon": "http://www.sporttery.cn/favicon.ico"
     }, {
         "url": "http://www.cwl.gov.cn/",
         "title": "中国福彩网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.cwl.gov.cn/"
+        "icon": "http://www.cwl.gov.cn/favicon.ico"
     }, {
         "url": "http://caipiao.sohu.com/",
         "title": "搜狐彩票",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://caipiao.sohu.com/"
+        "icon": "http://caipiao.sohu.com/favicon.ico"
     }, {
         "url": "http://www.okooo.com/",
         "title": "澳客网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.okooo.com/"
+        "icon": "http://www.okooo.com/favicon.ico"
     }, {
         "url": "http://zx.500.com/",
         "title": "500彩票",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://zx.500.com/"
+        "icon": "http://zx.500.com/favicon.ico"
     }, {
         "url": "http://www.zgzcw.com/",
         "title": "中国足彩网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.zgzcw.com/"
+        "icon": "http://www.zgzcw.com/favicon.ico"
     }, {
         "url": "http://www.310win.com/",
         "title": "彩客网",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.310win.com/"
+        "icon": "http://www.310win.com/favicon.ico"
     }]
 }, {
     "title": "银行",
@@ -918,45 +886,46 @@ let urlList = [{
     "children": [{
         "url": "http://www.icbc.com.cn/",
         "title": "工商银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.icbc.com.cn/"
+        "icon": "http://www.icbc.com.cn/favicon.ico"
     }, {
         "url": "http://www.ccb.com/",
         "title": "建设银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.ccb.com/"
+        "icon": "http://www.ccb.com/favicon.ico"
     }, {
         "url": "http://www.abchina.com/",
         "title": "农业银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.abchina.com/"
+        "icon": "http://www.abchina.com/favicon.ico"
     }, {
         "url": "http://www.boc.cn/",
         "title": "中国银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.boc.cn/"
+        "icon": "http://www.boc.cn/favicon.ico"
     }, {
         "url": "http://www.bankcomm.com/",
         "title": "交通银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.bankcomm.com/"
+        "icon": "http://www.bankcomm.com/favicon.ico"
     }, {
         "url": "http://www.cmbchina.com/",
         "title": "招商银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.cmbchina.com/"
+        "icon": "http://www.cmbchina.com/favicon.ico"
     }, {
         "url": "https://www.alipay.com/",
         "title": "支付宝",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.alipay.com/"
+        "icon": "https://www.alipay.com/favicon.ico"
     }, {
         "url": "http://www.pbc.gov.cn/",
         "title": "人民银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.pbc.gov.cn/"
+        "icon": "http://www.pbc.gov.cn/favicon.ico"
     }, {
         "url": "https://www.cib.com.cn/",
         "title": "兴业银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.cib.com.cn/"
+        "icon": "https://www.cib.com.cn/favicon.ico"
     }, {
         "url": "http://www.spdb.com.cn/",
         "title": "浦发银行",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://www.spdb.com.cn/"
+        "icon": "http://www.spdb.com.cn/favicon.ico"
     }]
-}, {
+}, 
+{
     "title": "邮箱",
     "files": 1,
     "x": 350,
@@ -965,41 +934,96 @@ let urlList = [{
     "children": [{
         "url": "http://mail.163.com/",
         "title": "163邮箱",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://mail.163.com/"
+        "icon": "http://mail.163.com/favicon.ico"
     }, {
         "url": "http://mail.126.com/",
         "title": "126邮箱",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://mail.126.com/"
+        "icon": "http://mail.126.com/favicon.ico"
     }, {
         "url": "http://mail.aliyun.com/",
         "title": "阿里邮箱",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://mail.aliyun.com/"
+        "icon": "http://mail.aliyun.com/favicon.ico"
     }, {
         "url": "http://mail.sina.com.cn/",
         "title": "新浪邮箱",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://mail.sina.com.cn/"
+        "icon": "http://mail.sina.com.cn/favicon.ico"
     }, {
         "url": "http://mail.qq.com/",
         "title": "QQ邮箱",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://mail.qq.com/"
+        "icon": "http://mail.qq.com/favicon.ico"
     }, {
         "url": "http://mail.10086.cn/",
         "title": "139手机邮箱",
-        "icon": "http://www.google.cn/s2/favicons?domain=http://mail.10086.cn/"
+        "icon": "http://mail.10086.cn/favicon.ico"
     }, {
         "url": "https://outlook.live.com/",
         "title": "Outlook邮箱",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://outlook.live.com/"
+        "icon": "https://outlook.live.com/favicon.ico"
     }, {
         "url": "https://mail.sohu.com/",
         "title": "搜狐邮箱",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://mail.sohu.com/"
+        "icon": "https://mail.sohu.com/favicon.ico"
     }, {
         "url": "https://www.aliyun.com/",
         "title": "阿里云",
-        "icon": "http://www.google.cn/s2/favicons?domain=https://www.aliyun.com/"
+        "icon": "https://www.aliyun.com/favicon.ico"
     }]
-},{"url":"https://www.bilibili.com/","title":"哔哩哔哩","icon":"http://www.google.cn/s2/favicons?domain=https://www.bilibili.com/","x":560,"y":252,"id":"130"},{"url":"http://v.qq.com/","title":"腾讯视频","icon":"http://www.google.cn/s2/favicons?domain=http://v.qq.com/","id":"136","x":630,"y":252},{"url":"http://www.iqiyi.com/","title":"爱奇艺高清","icon":"http://www.google.cn/s2/favicons?domain=http://www.iqiyi.com/","id":"132","x":700,"y":252},{"url":"http://www.youku.com/","title":"优酷网","icon":"http://www.google.cn/s2/favicons?domain=http://www.youku.com/","id":"133","x":770,"y":252},{"url":"http://www.mgtv.com/","title":"芒果TV","icon":"http://www.google.cn/s2/favicons?domain=http://www.mgtv.com/","id":"137","x":490,"y":252},{"url":"https://www.ixigua.com","title":"西瓜视频","id":"1ornwu5g30f","icon":"http://www.google.cn/s2/favicons?domain=https://www.ixigua.com","x":840,"y":252}
+},
+{
+    "title": "平台账号",
+    "files": 1,
+    "x": 350,
+    "y": 637,
+    "show": 0,
+    "children": [{
+        "url": "https://leetcode-cn.com",
+        "title": "力扣",
+        "icon": "https://leetcode-cn.com/favicon.ico"
+    }, {
+        "url": "https://juejin.im/",
+        "title": "掘金",
+        "icon": "https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/static/favicons/apple-touch-icon.png"
+    }, {
+        "url": "https://www.jianshu.com/u/45a49983cba5",
+        "title": "简书",
+        "icon": "https://www.jianshu.com/favicon.ico"
+    }, {
+        "url": "https://shimo.im/dashboard/own",
+        "title": "石墨文档",
+        "icon": "https://shimo.im/favicon.ico"
+    }, {
+        "url": "https://note.youdao.com/web/#/file/WEBca5d968ce2d571291658e1e1975be60d/note/WEB758295a2eaf70a751cb3b5bad66595ff/",
+        "title": "有道云笔记",
+        "icon": "https://note.youdao.com/favicon.ico"
+    }, {
+        "url": "https://gitee.com/",
+        "title": "码云 Gitee.com",
+        "icon": "https://gitee.com/favicon.ico"
+    }, {
+        "url": "https://www.yuque.com/dashboard",
+        "title": "工作台 · 语雀",
+        "icon": "https://www.yuque.com/favicon.ico"
+    }, {
+        "url": "https://portal.qiniu.com/kodo/bucket",
+        "title": "七牛云 - 对象存储 - 空间管理",
+        "icon": "https://portal.qiniu.com/favicon.ico"
+    }, {
+        "url": "https://www.iconfont.cn/manage/index?spm=a313x.7781069.1998910419.db775f1f3&manage_type=myprojects&projectId=1873294",
+        "title": "Iconfont-阿里巴巴矢量图标库",
+        "icon": "https://www.iconfont.cn/favicon.ico"
+    }
+]
+},
+
+{ "url": "https://www.bilibili.com/", "title": "哔哩哔哩", "icon": "https://www.bilibili.com/favicon.ico", "x": 560, "y": 252, "id": "130" },
+{ "url": "http://v.qq.com/", "title": "腾讯视频", "icon": "http://v.qq.com/favicon.ico", "id": "136", "x": 630, "y": 252 },
+{ "url": "http://www.iqiyi.com/", "title": "爱奇艺高清", "icon": "http://www.iqiyi.com/favicon.ico", "id": "132", "x": 700, "y": 252 },
+{ "url": "http://www.youku.com/", "title": "优酷网", "icon": "http://www.youku.com/favicon.ico", "id": "133", "x": 770, "y": 252 },
+{ "url": "http://www.mgtv.com/", "title": "芒果TV", "icon": "http://www.mgtv.com/favicon.ico", "id": "137", "x": 490, "y": 252 },
+{ "url": "https://www.ixigua.com/", "title": "西瓜视频", "id": "1ornwsru5g30f", "icon": "https://www.ixigua.com/favicon.ico", "x": 840, "y": 252 },
+{ "url": "https://mp.weixin.qq.com/", "title": "微信公众平台", "id": "1ornwudf5g30f", "icon": "https://res.wx.qq.com/a/fed_upload/9300e7ac-cec5-4454-b75c-f92260dd5b47/logo-mp.ico" },
+{ "url": "https://xiumi.us/#/studio/papers", "title": "秀米", "id": "1ornwddu5g30f", "icon": "https://xiumi.us/favicon.ico" },
+{ "url": "https://yiyan.baidu.com/", "title": "文心一言", "id": "ff", "icon": "https://yiyan.baidu.com/favicon.ico" },
 
 ]
 
